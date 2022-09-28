@@ -1,3 +1,13 @@
+Fork from <https://github.com/ayamir/nvimdots>
+
+# Prepare
+
+```
+brew install efm-langserver lazygit zoxide ripgrep sqlite fd neovim
+npm i -g typescript-language-server @fsouza/prettierd
+```
+
+
 # Introduction
 
 ![Dashboard](https://raw.githubusercontent.com/ayamir/blog-imgs/main/dashboard.png)

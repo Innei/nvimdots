@@ -52,5 +52,19 @@ tools["nathom/filetype.nvim"] = {
 	opt = false,
 	config = conf.filetype,
 }
+tools["jose-elias-alvarez/null-ls.nvim"] = {
+	opt = true,
+	config = conf.null_ls,
+	requires = {
+		{ "nvim-lua/plenary.nvim", opt = false },
+		{ "neovim/nvim-lspconfig", opt = true },
+	},
+}
+tools["MunifTanjim/prettier.nvim"] = {
+	opt = true,
+	run = "npm install",
+	cmd = "Prettier",
+	config = conf.prettier,
+}
 
 return tools
