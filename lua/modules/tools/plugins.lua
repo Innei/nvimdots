@@ -66,5 +66,14 @@ tools["MunifTanjim/prettier.nvim"] = {
 	cmd = "Prettier",
 	config = conf.prettier,
 }
+tools["francoiscabrol/ranger.vim"] = {
+	opt = true,
+	config = {}
+}
+tools["francoiscabrol/ranger.vim"] = {}
+tools["schickling/vim-bufonly"] = {
+	opt = true
+}
+tools["wellle/context.vim"] = {}
 
 return tools
