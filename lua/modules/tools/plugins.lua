@@ -72,7 +72,8 @@ tools["francoiscabrol/ranger.vim"] = {
 }
 tools["francoiscabrol/ranger.vim"] = {}
 tools["schickling/vim-bufonly"] = {
-	opt = true
+	opt = true,
+	cmd = { "BOnly" }
 }
 tools["wellle/context.vim"] = {}
 

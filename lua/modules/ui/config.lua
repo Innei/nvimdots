@@ -639,18 +639,18 @@ end
 function config.nvim_tree()
 	require("nvim-tree").setup({
 		create_in_closed_folder = false,
-		respect_buf_cwd = true,
+		-- respect_buf_cwd = true,
 		auto_reload_on_write = true,
 		disable_netrw = false,
 		hijack_cursor = true,
 		hijack_netrw = true,
-		hijack_unnamed_buffer_when_opening = false,
+		-- hijack_unnamed_buffer_when_opening = false,
 		ignore_buffer_on_setup = false,
-		open_on_setup = false,
-		open_on_setup_file = false,
+		open_on_setup = true,
+		open_on_setup_file = true,
 		open_on_tab = false,
 		sort_by = "name",
-		update_cwd = true,
+		-- update_cwd = true,
 		view = {
 			adaptive_size = false,
 			centralize_selection = false,
@@ -746,7 +746,7 @@ function config.nvim_tree()
 		actions = {
 			use_system_clipboard = true,
 			change_dir = {
-				enable = true,
+				enable = false,
 				global = false,
 			},
 			open_file = {
