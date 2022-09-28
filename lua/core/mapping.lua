@@ -2,6 +2,7 @@ local bind = require("keymap.bind")
 local map_cr = bind.map_cr
 local map_cu = bind.map_cu
 local map_cmd = bind.map_cmd
+local vim = vim
 
 -- default map
 local def_map = {
@@ -49,6 +50,6 @@ local def_map = {
 	["v|>"] = map_cmd(">gv"),
 }
 
--- vim.api.nvim_set_keymap('n', ';', ':', { noremap = true })
+vim.api.nvim_set_keymap('n', ';', ':', { noremap = true })
 
 bind.nvim_load_mapping(def_map)

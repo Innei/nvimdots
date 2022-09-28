@@ -16,7 +16,7 @@ mason_lsp.setup({
 		-- "clangd",
 		-- "gopls",
 		-- "pyright",
-		-- "efm",
+		"efm",
 		'typescript-language-server',
 		"lua-language-server",
 	},
@@ -201,20 +201,10 @@ for _, server in ipairs(mason_lsp.get_installed_servers()) do
 			},
 		})
 	elseif server == 'typescript-language-server' then
-		local on_attach = function(client, bufnr)
-			-- format on save
-			if client.server_capabilities.documentFormattingProvider then
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					group = vim.api.nvim_create_augroup("Format", { clear = true }),
-					buffer = bufnr,
-					callback = function() vim.lsp.buf.formatting_seq_sync() end
-				})
-			end
-		end
 		nvim_lsp.tsserver.setup {
-			on_attach = on_attach,
+			on_attach = custom_attach,
 			filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-			cmd = { "typescript-language-server", "--stdio" }
+			cmd = { "typescript-language-server", "--stdio" },
 		}
 	else
 		nvim_lsp[server].setup({
@@ -247,7 +237,7 @@ local efmls = require("efmls-configs")
 efmls.init({
 	on_attach = custom_attach,
 	capabilities = capabilities,
-	init_options = { documentFormatting = true, codeAction = true },
+	init_options = { documentFormatting = true, codeAction = true, },
 })
 
 -- Require `efmls-configs-nvim`'s config here
@@ -259,7 +249,7 @@ local shellcheck = require("efmls-configs.linters.shellcheck")
 
 local black = require("efmls-configs.formatters.black")
 local luafmt = require("efmls-configs.formatters.stylua")
-local prettier = require("efmls-configs.formatters.prettier")
+local prettier = require("efmls-configs.formatters.prettier_d")
 local shfmt = require("efmls-configs.formatters.shfmt")
 
 -- Add your own config for formatter and linter here

@@ -215,12 +215,18 @@ function config.null_ls()
 	if (not status) then return end
 
 	null_ls.setup({
-		sources = {
-			null_ls.builtins.diagnostics.eslint_d.with({
-				diagnostics_format = '[eslint] #{m}\n(#{c})'
-			}),
-			null_ls.builtins.diagnostics.fish
-		}
+		on_attach = function(client, bufnr)
+			if client.server_capabilities.documentFormattingProvider then
+				vim.cmd("nnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.formatting()<CR>")
+
+				-- format on save
+				vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()")
+			end
+
+			if client.server_capabilities.documentRangeFormattingProvider then
+				vim.cmd("xnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.range_formatting({})<CR>")
+			end
+		end,
 	})
 end
 
@@ -240,7 +246,7 @@ function config.prettier()
 				-- return false to skip running prettier
 				return true
 			end,
-			timeout = 5000,
+			timeout = 2000,
 		},
 		bin = 'prettierd',
 		filetypes = {
