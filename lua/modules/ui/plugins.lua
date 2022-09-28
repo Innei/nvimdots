@@ -4,11 +4,7 @@ local conf = require("modules.ui.config")
 ui["kyazdani42/nvim-web-devicons"] = { opt = false }
 ui["shaunsingh/nord.nvim"] = { opt = false, config = conf.nord }
 ui["sainnhe/edge"] = { opt = false, config = conf.edge }
-ui["catppuccin/nvim"] = {
-	opt = false,
-	as = "catppuccin",
-	config = conf.catppuccin,
-}
+
 ui["rcarriga/nvim-notify"] = {
 	opt = false,
 	config = conf.notify,
@@ -63,6 +59,9 @@ ui["j-hui/fidget.nvim"] = {
 	opt = true,
 	event = "BufReadPost",
 	config = conf.fidget,
+}
+ui["projekt0n/github-nvim-theme"] = {
+
 }
 
 return ui
