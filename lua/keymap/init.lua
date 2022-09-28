@@ -137,8 +137,8 @@ local plug_map = {
 	-- Plugin Diffview
 	["n|<leader>D"] = map_cr("DiffviewOpen"):with_silent():with_noremap(),
 	["n|<leader><leader>D"] = map_cr("DiffviewClose"):with_silent():with_noremap(),
-	-- Plugin ranger
-	["n|<S-r>"] = map_cr('Ranger'):with_silent():with_noremap(),
+	-- Plugin rnvimr
+	["n|<S-r>"] = map_cr('RnvimrToggle'):with_silent():with_noremap(),
 }
 
 bind.nvim_load_mapping(plug_map)

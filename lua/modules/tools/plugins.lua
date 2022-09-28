@@ -66,11 +66,8 @@ tools["MunifTanjim/prettier.nvim"] = {
 	cmd = "Prettier",
 	config = conf.prettier,
 }
-tools["francoiscabrol/ranger.vim"] = {
-	opt = true,
-	config = {}
-}
-tools["francoiscabrol/ranger.vim"] = {}
+
+tools["kevinhwang91/rnvimr"] = {}
 tools["schickling/vim-bufonly"] = {
 	opt = true,
 	cmd = { "BOnly" }
